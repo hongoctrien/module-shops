@@ -2017,7 +2017,7 @@ function nv_template_tag($array_data, $pages = '', $sort = 0, $viewtype = 'viewg
  */
 function nv_template_loadcart($array_data, $array_products = array())
 {
-    global $lang_tmp, $module_name, $module_file, $pro_config, $module_info;
+    global $lang_tmp, $module_name, $module_file, $pro_config, $module_info,$module_data;
 
     $xtpl = new XTemplate("block.cart.tpl", NV_ROOTDIR . "/themes/" . $module_info['template'] . "/modules/" . $module_file);
     $xtpl->assign('LANG', $lang_tmp);
@@ -2029,6 +2029,7 @@ function nv_template_loadcart($array_data, $array_products = array())
     if (!empty($array_products)) {
         foreach ($array_products as $product) {
             $product['price'] = nv_get_price($product['id'], $pro_config['money_unit']);
+            $product['num'] = $_SESSION[$module_data . '_cart'][$product['id'] . '_' . $array[1]]['num'];
             $xtpl->assign('PRODUCT', $product);
             $xtpl->parse('main.product.loop');
         }
