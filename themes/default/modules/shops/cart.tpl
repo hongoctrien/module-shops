@@ -86,7 +86,7 @@
 					<td>{product_unit}</td>
 					<script>
 						$( "#{id}" ).change(function() {
-					    	if($(this).val() == 0){								
+					    	if($(this).val() < 1){								
 					    	    $('#click_{id}').trigger('click');
 					    	}
 					  });
