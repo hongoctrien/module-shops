@@ -84,10 +84,19 @@
 					<!-- END: price2 -->
 					<td align="center"><input type="number" size="1" value="{pro_num}" name="listproid[{id}_{list_group}]" id="{id}" class="form-control"/></td>
 					<td>{product_unit}</td>
+					<script>
+						$( "#{id}" ).change(function() {
+					    	if($(this).val() == 0){								
+					    	    $('#click_{id}').trigger('click');
+					    	}
+					  });
+					</script>					
+
+					<td>{product_unit}</td>
 					<!-- BEGIN: price5 -->
 					<td class="money text-right">{PRICE_TOTAL.sale_format}</td>
 					<!-- END: price5 -->
-					<td align="center"><a class="remove_cart" title="{LANG.cart_remove_pro}" href="{link_remove}"><em style="color: red" class="fa fa-times-circle">&nbsp;</em></a></td>
+					<td align="center"><a class="remove_cart" id="click_{id}" title="{LANG.cart_remove_pro}" href="{link_remove}"><em style="color: red" class="fa fa-times-circle">&nbsp;</em></a></td>
 				</tr>
 				<!-- END: rows -->
 			</tbody>
