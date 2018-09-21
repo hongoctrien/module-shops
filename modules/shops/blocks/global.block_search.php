@@ -1,18 +1,18 @@
 <?php
 
 /**
-
-* @Project NUKEVIET 4.x
-
-* @Author VINADES.,JSC (contact@vinades.vn)
-
-* @Copyright (C) 2014 VINADES., JSC. All rights reserved
-
-* @License GNU/GPL version 2 or any later version
-
-* @Createdate 3/9/2010 23:25
-
-*/
+ 
+ * @Project NUKEVIET 4.x
+ 
+ * @Author VINADES.,JSC (contact@vinades.vn)
+ 
+ * @Copyright (C) 2014 VINADES., JSC. All rights reserved
+ 
+ * @License GNU/GPL version 2 or any later version
+ 
+ * @Createdate 3/9/2010 23:25
+ 
+ */
 if (!defined('NV_MAINFILE')) {
     
     die('Stop!!!');
@@ -21,16 +21,16 @@ if (!defined('NV_MAINFILE')) {
 if (!function_exists('nv_search_product')) {
     
     /**
-    
-    * nv_search_product()
-    
-    *
-    
-    * @param mixed $block_config
-    
-    * @return
-    
-    */
+     
+     * nv_search_product()
+     
+     *
+     
+     * @param mixed $block_config
+     
+     * @return
+     
+     */
     function nv_search_product($block_config)
     
     {
