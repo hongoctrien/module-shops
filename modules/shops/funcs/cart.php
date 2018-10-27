@@ -232,9 +232,13 @@ if (!empty($_SESSION[$module_data . '_cart'])) {
     nv_redirect_location(NV_BASE_SITEURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&' . NV_NAME_VARIABLE . '=' . $module_name, true);
 }
 
-$page_title = $lang_module['cart_title'];
-
 $contents = call_user_func('cart_product', $data_content, $coupons_code, $order_info, $array_error_product_number);
+
+$page_title = $lang_module['cart_title'];
+$array_mod_title[] = array(
+    'title' => $page_title,
+    'link' => NV_BASE_SITEURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=' . $module_name . '&amp;' . NV_OP_VARIABLE . '=' . $op
+);
 
 include NV_ROOTDIR . '/includes/header.php';
 echo nv_site_theme($contents);

@@ -199,6 +199,11 @@ if ($order_id > 0 and $checkss == md5($order_id . $global_config['sitekey'] . se
 
     $contents = call_user_func('payment', $data, $data_pro, $data_shipping, $payment_supported, $intro_pay, $point);
 
+    $array_mod_title[] = array(
+        'title' => $page_title,
+        'link' => NV_BASE_SITEURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=' . $module_name . '&amp;' . NV_OP_VARIABLE . '=' . $op
+    );
+
     include NV_ROOTDIR . '/includes/header.php';
     echo nv_site_theme($contents);
     include NV_ROOTDIR . '/includes/footer.php';

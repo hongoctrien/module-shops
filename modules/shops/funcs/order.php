@@ -632,6 +632,10 @@ if ($action == 0) {
         nv_redirect_location(NV_BASE_SITEURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&' . NV_NAME_VARIABLE . '=' . $module_name . '&' . NV_OP_VARIABLE . '=cart', true);
     } else {
         $contents = call_user_func('uers_order', $data_content, $data_order, $array_counpons['discount'], $order_info, $error);
+        $array_mod_title[] = array(
+            'title' => $page_title,
+            'link' => NV_BASE_SITEURL . 'index.php?' . NV_LANG_VARIABLE . '=' . NV_LANG_DATA . '&amp;' . NV_NAME_VARIABLE . '=' . $module_name . '&amp;' . NV_OP_VARIABLE . '=' . $op
+        );
     }
 }
 
